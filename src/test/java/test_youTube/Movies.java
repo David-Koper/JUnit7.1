@@ -1,8 +1,8 @@
 package test_youTube;
 
 public enum Movies {
-    Metallica("Nothing Else Matters"),
-    Nirvana("Smells Like Teen Spirit");
+    METALLICA("Nothing Else Matters"),
+    NIRVANA("Smells Like Teen Spirit");
 
     public final String desc;
 

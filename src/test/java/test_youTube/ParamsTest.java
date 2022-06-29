@@ -17,14 +17,14 @@ public class ParamsTest extends TestBase {
     //@Disabled()
     @DisplayName("Проверка, что 5 > 3")
     @Test
-   void SimpleTest() {
+   void simpleTest() {
         Assertions.assertTrue(5 > 3);
     }
 
     //@Disabled()
     @ValueSource(strings = {"The Prodigy - Firestarter", "The Prodigy - We Live Forever", "The Prodigy - Omen", "The Prodigy - Baby's Got A Temper"})
     @ParameterizedTest(name = "YouTube, при поискe песни {0} в результатах есть поле The Prodigy")
-    void ValueTest(String testData) {
+    void valueTest(String testData) {
         moviesPage.openPage()
                 .topMenuClick()
                 .topMenuSearch(testData)
@@ -41,7 +41,7 @@ public class ParamsTest extends TestBase {
 
   @Disabled("CsvTest disabled")
     @ParameterizedTest(name = "YouTube, при поиске песни {0} в результатах есть  поле исполнитель {1}")
-    void CsvTest(String searchData, String expectedResult) {
+    void csvTest(String searchData, String expectedResult) {
         moviesPage.openPage()
                 .topMenuClick()
                 .topMenuSearch(searchData)
@@ -59,7 +59,7 @@ public class ParamsTest extends TestBase {
     @MethodSource(value = "complexDataProvider")
    // @Disabled("MethodTest disabled")
     @ParameterizedTest(name = "YouTube, при поискe песни {0} в результатах есть поле исполнитель The Prodigy")
-    void MethodTest(String searchData) {
+    void methodTest(String searchData) {
         moviesPage.openPage()
                 .topMenuClick()
                 .topMenuSearch(searchData)
@@ -69,7 +69,7 @@ public class ParamsTest extends TestBase {
    @EnumSource(Movies.class)
     // @Disabled("EnumTest disabled")
     @ParameterizedTest()
-   void EnumTest(Movies movies) {
+   void enumTest(Movies movies) {
         moviesPage.openPage()
                .topMenuClick()
               .topMenuSearch(movies.desc)
